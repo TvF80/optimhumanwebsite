@@ -1,18 +1,17 @@
 import { motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
 
 interface PartnersProps { t: any }
+const vp = { once: true, amount: 0.1 }
 
 export default function Partners({ t }: PartnersProps) {
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 })
-
   return (
     <section id="partners" className="py-24 bg-gradient-to-b from-[#f0f4ff] to-[#0e1a3a]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={vp}
+          transition={{ duration: 0.55 }}
           className="text-center mb-16"
         >
           <span className="text-emerald-500 text-sm font-semibold uppercase tracking-widest">Network</span>
@@ -21,11 +20,11 @@ export default function Partners({ t }: PartnersProps) {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8 mb-16">
-          {/* EXCO */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={vp}
+            transition={{ duration: 0.6, delay: 0.1 }}
             className="glass-light rounded-3xl p-8 card-3d"
           >
             <div className="flex items-center gap-3 mb-4">
@@ -43,11 +42,11 @@ export default function Partners({ t }: PartnersProps) {
             </div>
           </motion.div>
 
-          {/* KRESTON */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.3 }}
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={vp}
+            transition={{ duration: 0.6, delay: 0.2 }}
             className="glass-light rounded-3xl p-8 card-3d"
           >
             <div className="flex items-center gap-3 mb-4">
@@ -66,11 +65,11 @@ export default function Partners({ t }: PartnersProps) {
           </motion.div>
         </div>
 
-        {/* Globe visual */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={inView ? { opacity: 1, scale: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={vp}
+          transition={{ duration: 0.6, delay: 0.2 }}
           className="glass rounded-3xl p-8 text-center"
         >
           <div className="text-6xl mb-4">🌍</div>

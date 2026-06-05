@@ -1,20 +1,20 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
 
 interface ClientsProps { t: any }
+const vp = { once: true, amount: 0.1 }
 
 export default function Clients({ t }: ClientsProps) {
   const [active, setActive] = useState(0)
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 })
 
   return (
     <section id="clients" className="py-24 bg-gradient-to-b from-[#0a0f1e] to-[#f0f4ff]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={vp}
+          transition={{ duration: 0.55 }}
           className="text-center mb-16"
         >
           <span className="text-amber-400 text-sm font-semibold uppercase tracking-widest">Clients</span>
@@ -27,8 +27,9 @@ export default function Clients({ t }: ClientsProps) {
             <motion.button
               key={i}
               initial={{ opacity: 0, scale: 0.9 }}
-              animate={inView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={vp}
+              transition={{ duration: 0.4, delay: i * 0.08 }}
               onClick={() => setActive(i)}
               className={`flex flex-col items-center gap-2 p-5 rounded-2xl border transition-all duration-300 ${
                 active === i
@@ -44,13 +45,12 @@ export default function Clients({ t }: ClientsProps) {
           ))}
         </div>
 
-        {/* Detail panel */}
         <AnimatePresence mode="wait">
           <motion.div
             key={active}
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -15 }}
+            exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.3 }}
             className="glass-light rounded-2xl p-8 text-center"
           >

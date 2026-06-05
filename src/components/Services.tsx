@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
 
 interface ServicesProps { t: any }
 
@@ -18,41 +17,39 @@ const serviceColors = [
   'from-sky-500/20 to-sky-600/10 border-sky-500/30',
 ]
 const accentColors = ['text-blue-400','text-cyan-400','text-amber-400','text-purple-400','text-emerald-400','text-rose-400','text-indigo-400','text-teal-400','text-orange-400','text-sky-400']
+const vp = { once: true, amount: 0.05 }
 
 export default function Services({ t }: ServicesProps) {
   const [selected, setSelected] = useState<number | null>(null)
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.05 })
 
   return (
     <section id="services" className="py-24 bg-gradient-to-b from-[#f0f4ff] to-[#0e1a3a]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
-        {/* Header */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={vp}
+          transition={{ duration: 0.55 }}
           className="text-center mb-16"
         >
           <span className="text-blue-500 text-sm font-semibold uppercase tracking-widest">HR Services</span>
-          <h2 className="text-3xl sm:text-5xl font-bold mt-2 mb-4 text-slate-800">
-            {t.services.title}
-          </h2>
+          <h2 className="text-3xl sm:text-5xl font-bold mt-2 mb-4 text-slate-800">{t.services.title}</h2>
           <p className="text-slate-500 text-lg max-w-2xl mx-auto">{t.services.subtitle}</p>
         </motion.div>
 
-        {/* Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mb-10">
           {t.services.items.map((item: any, i: number) => (
             <motion.button
               key={i}
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: i * 0.06 }}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={vp}
+              transition={{ duration: 0.45, delay: (i % 4) * 0.07 }}
               onClick={() => setSelected(i)}
               className={`text-left rounded-2xl p-5 border bg-gradient-to-br ${serviceColors[i]} card-3d group hover:border-opacity-60 transition-all duration-300`}
             >
               <div className="text-3xl mb-3">{serviceIcons[i]}</div>
-              <h3 className={`font-bold text-base mb-2 ${accentColors[i]} group-hover:opacity-90`}>{item.title}</h3>
+              <h3 className={`font-bold text-base mb-2 ${accentColors[i]}`}>{item.title}</h3>
               <p className="text-slate-300 text-xs leading-relaxed line-clamp-3">{item.short}</p>
               <div className={`mt-3 text-xs font-semibold ${accentColors[i]} flex items-center gap-1`}>
                 {t.services.learnMore} <span>→</span>
@@ -62,7 +59,6 @@ export default function Services({ t }: ServicesProps) {
         </div>
       </div>
 
-      {/* Modal */}
       <AnimatePresence>
         {selected !== null && (
           <motion.div
@@ -84,9 +80,7 @@ export default function Services({ t }: ServicesProps) {
               <h3 className={`text-2xl font-bold mb-3 ${accentColors[selected]}`}>
                 {t.services.items[selected].title}
               </h3>
-              <p className="text-slate-200 leading-relaxed mb-6">
-                {t.services.items[selected].detail}
-              </p>
+              <p className="text-slate-200 leading-relaxed mb-6">{t.services.items[selected].detail}</p>
               <div className="flex gap-3">
                 <button
                   onClick={() => { setSelected(null); document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }) }}
