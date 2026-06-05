@@ -46,7 +46,7 @@ export default function Services({ t }: ServicesProps) {
           <p className="text-slate-500 text-lg max-w-2xl mx-auto">{t.services.subtitle}</p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mb-10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-10">
           {t.services.items.map((item: any, i: number) => (
             <motion.button
               key={i}
@@ -54,14 +54,15 @@ export default function Services({ t }: ServicesProps) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={vp}
               transition={{ duration: 0.45, delay: (i % 4) * 0.07 }}
+              whileHover={{ y: -4, scale: 1.02 }}
               onClick={() => setSelected(i)}
-              className={`text-left rounded-2xl p-5 border bg-gradient-to-br ${serviceColors[i]} card-3d group hover:border-opacity-60 transition-all duration-300`}
+              className={`text-left rounded-2xl p-6 border bg-gradient-to-br ${serviceColors[i]} group transition-all duration-300 hover:shadow-lg`}
             >
-              <div className="text-3xl mb-3">{serviceIcons[i]}</div>
-              <h3 className={`font-bold text-base mb-2 ${accentColors[i]}`}>{item.title}</h3>
-              <p className="text-slate-300 text-xs leading-relaxed line-clamp-3">{item.short}</p>
-              <div className={`mt-3 text-xs font-semibold ${accentColors[i]} flex items-center gap-1`}>
-                {t.services.learnMore} <span>→</span>
+              <div className="text-4xl mb-4">{serviceIcons[i]}</div>
+              <h3 className={`font-bold text-lg mb-2.5 ${accentColors[i]}`}>{item.title}</h3>
+              <p className="text-slate-300 text-sm leading-relaxed line-clamp-3">{item.short}</p>
+              <div className={`mt-4 text-xs font-semibold ${accentColors[i]} flex items-center gap-1.5 opacity-70 group-hover:opacity-100 transition-opacity`}>
+                {t.services.learnMore} <span className="group-hover:translate-x-1 transition-transform inline-block">→</span>
               </div>
             </motion.button>
           ))}

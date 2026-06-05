@@ -37,16 +37,20 @@ export default function Partners({ t }: PartnersProps) {
         {/* Partner cards */}
         <div className="grid md:grid-cols-2 gap-6 mb-20">
           {/* EXCO */}
-          <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={vp} transition={{ duration: 0.55 }}
-            className="rounded-3xl p-8 border border-blue-200/60 hover:border-blue-400/60 transition-all duration-300 hover:-translate-y-1"
+          <motion.a
+            href="https://exco.pl" target="_blank" rel="noopener noreferrer"
+            initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={vp} transition={{ duration: 0.55 }}
+            whileHover={{ y: -4 }}
+            className="block rounded-3xl p-8 border border-blue-200/60 hover:border-blue-400/80 hover:shadow-xl hover:shadow-blue-100/50 transition-all duration-300 group"
             style={{ background: 'linear-gradient(135deg, #ffffff 0%, #eff6ff 100%)' }}>
             <div className="flex items-center gap-4 mb-5">
               <div className="h-14 rounded-2xl bg-white flex items-center justify-center border border-blue-100 shadow-sm px-3 py-2">
                 <img src="/exco-logo.svg" alt="EXCO A2A Polska" className="h-10 w-auto object-contain" />
               </div>
-              <div>
+              <div className="flex-1">
                 <span className="text-blue-600 text-xs font-semibold uppercase tracking-wide">Właściciel · Spółka matka</span>
               </div>
+              <svg className="w-4 h-4 text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
             </div>
             <p className="text-slate-600 text-sm leading-relaxed mb-4">{t.partners.exco}</p>
             <div className="flex flex-wrap gap-2">
@@ -54,19 +58,27 @@ export default function Partners({ t }: PartnersProps) {
                 <span key={tag} className="px-2.5 py-1 bg-blue-50 text-blue-700 text-xs rounded-full border border-blue-100">{tag}</span>
               ))}
             </div>
-          </motion.div>
+            <div className="mt-4 flex items-center gap-1.5 text-blue-500 text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
+              <span>Odwiedź exco.pl</span>
+              <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            </div>
+          </motion.a>
 
           {/* Kreston */}
-          <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={vp} transition={{ duration: 0.55, delay: 0.1 }}
-            className="rounded-3xl p-8 border border-slate-200/60 hover:border-slate-400/60 transition-all duration-300 hover:-translate-y-1"
+          <motion.a
+            href="https://kreston.com" target="_blank" rel="noopener noreferrer"
+            initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={vp} transition={{ duration: 0.55, delay: 0.1 }}
+            whileHover={{ y: -4 }}
+            className="block rounded-3xl p-8 border border-slate-200/60 hover:border-slate-400/80 hover:shadow-xl hover:shadow-slate-100/50 transition-all duration-300 group"
             style={{ background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)' }}>
             <div className="flex items-center gap-4 mb-5">
               <div className="h-14 rounded-2xl bg-white flex items-center justify-center border border-slate-100 shadow-sm px-3 py-2">
                 <img src="/kreston-logo.svg" alt="Kreston International" className="h-10 w-auto object-contain" />
               </div>
-              <div>
+              <div className="flex-1">
                 <span className="text-slate-500 text-xs font-semibold uppercase tracking-wide">Sieć globalna · Top 10 worldwide</span>
               </div>
+              <svg className="w-4 h-4 text-slate-400 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
             </div>
             <p className="text-slate-600 text-sm leading-relaxed mb-4">{t.partners.kreston}</p>
             <div className="flex flex-wrap gap-2">
@@ -74,7 +86,11 @@ export default function Partners({ t }: PartnersProps) {
                 <span key={tag} className="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs rounded-full border border-slate-200">{tag}</span>
               ))}
             </div>
-          </motion.div>
+            <div className="mt-4 flex items-center gap-1.5 text-slate-500 text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
+              <span>Odwiedź kreston.com</span>
+              <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            </div>
+          </motion.a>
         </div>
 
         {/* Global reach */}

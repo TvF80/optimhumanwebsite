@@ -98,10 +98,10 @@ export const translations = {
       title: 'Jak działamy',
       subtitle: 'Sprawdzony proces — pewne rezultaty',
       steps: [
-        { title: 'Analiza potrzeb', desc: 'Dokładne poznanie specyfiki firmy, kultury organizacyjnej i wymagań stanowiska.' },
-        { title: 'Strategia', desc: 'Dobór optymalnych narzędzi i metod — dopasowanych do celu i budżetu.' },
-        { title: 'Realizacja', desc: 'Profesjonalne wykonanie projektu z transparentną komunikacją na każdym kroku.' },
-        { title: 'Wsparcie', desc: 'Opieka po zakończeniu projektu i gotowość na kolejne wyzwania HR.' },
+        { title: 'Analiza potrzeb', desc: 'Dokładne poznanie specyfiki firmy, kultury organizacyjnej i wymagań stanowiska.', extra: 'Przeprowadzamy pogłębione rozmowy z kluczowymi interesariuszami, analizujemy strukturę organizacji i definiujemy kryteria sukcesu. To fundament każdego skutecznego projektu HR.' },
+        { title: 'Strategia', desc: 'Dobór optymalnych narzędzi i metod — dopasowanych do celu i budżetu.', extra: 'Projektujemy spersonalizowany plan działania: określamy kanały pozyskiwania talentów, wybieramy narzędzia diagnostyczne (DISC, TTI) i ustalamy harmonogram z mierzalnymi kamieniami milowymi.' },
+        { title: 'Realizacja', desc: 'Profesjonalne wykonanie projektu z transparentną komunikacją na każdym kroku.', extra: 'Działamy sprawnie i merytorycznie — prowadzimy selekcję, wywiady, assessmenty i prezentujemy szczegółowe raporty z rekomendacjami. Klient na bieżąco śledzi postępy.' },
+        { title: 'Wsparcie', desc: 'Opieka po zakończeniu projektu i gotowość na kolejne wyzwania HR.', extra: 'Nie kończymy relacji na podpisaniu umowy. Towarzyszymy w onboardingu, monitorujemy efekty i pozostajemy partnerem na kolejnych etapach rozwoju organizacji.' },
       ],
     },
     clients: {
@@ -219,10 +219,10 @@ export const translations = {
       title: 'How we work',
       subtitle: 'A proven process — reliable results',
       steps: [
-        { title: 'Needs analysis', desc: 'Getting to know the company specifics, organisational culture and position requirements.' },
-        { title: 'Strategy', desc: 'Selecting the optimal tools and methods — tailored to the goal and budget.' },
-        { title: 'Execution', desc: 'Professional project delivery with transparent communication at every step.' },
-        { title: 'Support', desc: 'Post-project care and readiness for the next HR challenges.' },
+        { title: 'Needs analysis', desc: 'Getting to know the company specifics, organisational culture and position requirements.', extra: 'We conduct in-depth conversations with key stakeholders, analyse the organisational structure and define success criteria. This is the foundation of every effective HR project.' },
+        { title: 'Strategy', desc: 'Selecting the optimal tools and methods — tailored to the goal and budget.', extra: 'We design a personalised action plan: define talent sourcing channels, select diagnostic tools (DISC, TTI) and set a timeline with measurable milestones.' },
+        { title: 'Execution', desc: 'Professional project delivery with transparent communication at every step.', extra: 'We act efficiently and substantively — conducting selection, interviews, assessments and presenting detailed reports with recommendations. The client tracks progress in real time.' },
+        { title: 'Support', desc: 'Post-project care and readiness for the next HR challenges.', extra: 'Our relationship does not end at contract signing. We accompany onboarding, monitor results and remain a partner through the next stages of organisational development.' },
       ],
     },
     clients: {
@@ -340,10 +340,10 @@ export const translations = {
       title: 'Notre méthode',
       subtitle: 'Un processus éprouvé — des résultats fiables',
       steps: [
-        { title: 'Analyse des besoins', desc: 'Comprendre la spécificité de l\'entreprise, la culture organisationnelle et les exigences du poste.' },
-        { title: 'Stratégie', desc: 'Sélection des outils et méthodes optimaux — adaptés à l\'objectif et au budget.' },
-        { title: 'Réalisation', desc: 'Exécution professionnelle avec une communication transparente à chaque étape.' },
-        { title: 'Accompagnement', desc: 'Suivi post-projet et disponibilité pour les prochains défis RH.' },
+        { title: 'Analyse des besoins', desc: 'Comprendre la spécificité de l\'entreprise, la culture organisationnelle et les exigences du poste.', extra: 'Nous menons des entretiens approfondis avec les parties prenantes clés, analysons la structure organisationnelle et définissons les critères de succès. C\'est le fondement de tout projet RH efficace.' },
+        { title: 'Stratégie', desc: 'Sélection des outils et méthodes optimaux — adaptés à l\'objectif et au budget.', extra: 'Nous concevons un plan d\'action personnalisé : définition des canaux d\'acquisition de talents, sélection des outils diagnostiques (DISC, TTI) et établissement d\'un calendrier avec des jalons mesurables.' },
+        { title: 'Réalisation', desc: 'Exécution professionnelle avec une communication transparente à chaque étape.', extra: 'Nous agissons efficacement et rigoureusement — en menant la sélection, les entretiens, les assessments et en présentant des rapports détaillés avec recommandations. Le client suit les progrès en temps réel.' },
+        { title: 'Accompagnement', desc: 'Suivi post-projet et disponibilité pour les prochains défis RH.', extra: 'Notre relation ne s\'arrête pas à la signature du contrat. Nous accompagnons l\'intégration, surveillons les résultats et restons partenaire à travers les prochaines étapes du développement organisationnel.' },
       ],
     },
     clients: {
