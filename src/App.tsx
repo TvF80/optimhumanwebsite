@@ -7,6 +7,8 @@ import Services from './components/Services'
 import Process from './components/Process'
 import Clients from './components/Clients'
 import Partners from './components/Partners'
+import Team from './components/Team'
+import LinkedIn from './components/LinkedIn'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 export default function App() {
@@ -35,6 +37,8 @@ export default function App() {
         <Process t={t} />
         <Clients t={t} />
         <Partners t={t} />
+        <Team t={t} lang={lang} />
+        <LinkedIn t={t} />
         <Contact t={t} lang={lang} />
       </main>
 
