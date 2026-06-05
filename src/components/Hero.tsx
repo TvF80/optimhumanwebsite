@@ -136,20 +136,20 @@ export default function Hero({ t }: HeroProps) {
   ]
 
   return (
-    <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
-      {/* Canvas background */}
-      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
+    <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#0a0f1e]">
+      {/* Canvas background — explicit z-index below content */}
+      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" style={{ zIndex: 0 }} />
 
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0a0f1e]/40 via-transparent to-[#0a0f1e]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0a0f1e]/40 via-transparent to-[#0a0f1e]" style={{ zIndex: 1 }} />
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-5xl mx-auto pt-24">
+      <div className="relative text-center px-4 max-w-5xl mx-auto pt-24" style={{ zIndex: 2 }}>
         {/* Badge */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
+          initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.3 }}
+          transition={{ delay: 0.1, duration: 0.4 }}
           className="inline-flex items-center gap-2 glass rounded-full px-4 py-2 text-sm text-blue-300 mb-8 border border-blue-500/30"
         >
           <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
@@ -157,13 +157,13 @@ export default function Hero({ t }: HeroProps) {
         </motion.div>
 
         {/* Headline */}
-        <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight mb-6">
+        <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight mb-6 text-white">
           {words.map((word: string, i: number) => (
             <motion.span
               key={i}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 + i * 0.1, duration: 0.6, ease: 'easeOut' }}
+              transition={{ delay: 0.2 + i * 0.07, duration: 0.5, ease: 'easeOut' }}
               className="inline-block mr-3"
             >
               {i === words.length - 1 ? (
@@ -175,9 +175,9 @@ export default function Hero({ t }: HeroProps) {
 
         {/* Subtitle */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.2, duration: 0.6 }}
+          transition={{ delay: 0.5, duration: 0.5 }}
           className="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto mb-10"
         >
           {t.hero.subtitle}
@@ -185,9 +185,9 @@ export default function Hero({ t }: HeroProps) {
 
         {/* CTAs */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.5, duration: 0.5 }}
+          transition={{ delay: 0.7, duration: 0.4 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <button
@@ -208,10 +208,11 @@ export default function Hero({ t }: HeroProps) {
       {/* Stats bar */}
       <motion.div
         ref={statsRef}
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.8, duration: 0.6 }}
-        className="relative z-10 w-full max-w-5xl mx-auto px-4 mt-16 mb-8"
+        transition={{ delay: 0.9, duration: 0.5 }}
+        className="relative w-full max-w-5xl mx-auto px-4 mt-16 mb-8"
+        style={{ zIndex: 2 }}
       >
         <div className="glass rounded-2xl p-6 grid grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((s, i) => (

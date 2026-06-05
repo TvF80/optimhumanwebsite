@@ -9,8 +9,6 @@ import Clients from './components/Clients'
 import Partners from './components/Partners'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
-import './index.css'
-
 export default function App() {
   const { lang, setLang, t } = useLang()
   const [mousePos, setMousePos] = useState({ x: -500, y: -500 })
