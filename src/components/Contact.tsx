@@ -27,8 +27,16 @@ export default function Contact({ t, lang }: ContactProps) {
   const opts = serviceOptions[lang as keyof typeof serviceOptions] || serviceOptions.pl
 
   return (
-    <section id="contact" className="py-24 bg-gradient-to-b from-[#0e1a3a] to-[#061229]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-24 relative overflow-hidden bg-gradient-to-b from-[#0e1a3a] to-[#061229]">
+      {/* Dot matrix pattern */}
+      <div className="absolute inset-0 opacity-[0.07]" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Ccircle cx='20' cy='20' r='1.5' fill='%2360a5fa'/%3E%3C/svg%3E")`,
+        backgroundSize: '40px 40px',
+      }} />
+      {/* Diagonal neon line */}
+      <div className="absolute top-0 right-0 w-1 h-full opacity-10 pointer-events-none" style={{ background: 'linear-gradient(180deg, transparent, #3b82f6, #06b6d4, transparent)' }} />
+      <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full blur-3xl opacity-10 pointer-events-none" style={{ background: 'radial-gradient(circle, #3b82f6, transparent)' }} />
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}

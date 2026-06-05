@@ -31,6 +31,11 @@ export default function LinkedIn({ t }: LinkedInProps) {
   return (
     <section id="linkedin" className="py-24 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #061229 0%, #0a0f1e 100%)' }}>
       <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'linear-gradient(135deg, #0077B5 0%, transparent 50%)', pointerEvents: 'none' }} />
+      {/* Zigzag geometric pattern */}
+      <div className="absolute inset-0 opacity-[0.05]" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='30'%3E%3Cpath d='M0 15 L15 0 L30 15 L45 0 L60 15 L45 30 L30 15 L15 30 Z' fill='none' stroke='%230077B5' stroke-width='1'/%3E%3C/svg%3E")`,
+        backgroundSize: '60px 30px',
+      }} />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={vp} transition={{ duration: 0.55 }} className="text-center mb-16">

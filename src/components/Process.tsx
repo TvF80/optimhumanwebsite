@@ -8,8 +8,16 @@ const vp = { once: true, amount: 0.1 }
 
 export default function Process({ t }: ProcessProps) {
   return (
-    <section id="process" className="py-24 bg-gradient-to-b from-[#0e1a3a] to-[#0a0f1e]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="process" className="py-24 relative overflow-hidden bg-gradient-to-b from-[#0e1a3a] to-[#0a0f1e]">
+      {/* Topographic wave lines */}
+      <div className="absolute inset-0 opacity-[0.06]" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cellipse cx='100' cy='100' rx='80' ry='30' fill='none' stroke='%2360a5fa' stroke-width='1'/%3E%3Cellipse cx='100' cy='100' rx='60' ry='22' fill='none' stroke='%2360a5fa' stroke-width='1'/%3E%3Cellipse cx='100' cy='100' rx='40' ry='15' fill='none' stroke='%2360a5fa' stroke-width='1'/%3E%3Cellipse cx='100' cy='100' rx='20' ry='8' fill='none' stroke='%2360a5fa' stroke-width='1'/%3E%3C/svg%3E")`,
+        backgroundSize: '200px 200px',
+      }} />
+      {/* Corner accent */}
+      <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full blur-2xl opacity-15 pointer-events-none" style={{ background: 'radial-gradient(circle, #34d399, transparent)' }} />
+      <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full blur-2xl opacity-15 pointer-events-none" style={{ background: 'radial-gradient(circle, #f59e0b, transparent)' }} />
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -52,8 +52,9 @@ export default function Clients({ t }: ClientsProps) {
 
   return (
     <section id="clients" className="py-24 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #0a0f1e 0%, #f0f4ff 100%)' }}>
-      {/* Subtle hex pattern */}
-      <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='52' viewBox='0 0 60 52' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 17.3V34.7L30 52L0 34.7V17.3z' fill='none' stroke='%233b82f6' stroke-width='1'/%3E%3C/svg%3E")`, backgroundSize: '60px 52px' }} />
+      {/* Hexagonal grid pattern */}
+      <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='52' viewBox='0 0 60 52' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 17.3V34.7L30 52L0 34.7V17.3z' fill='none' stroke='%233b82f6' stroke-width='1'/%3E%3C/svg%3E")`, backgroundSize: '60px 52px' }} />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] opacity-10 pointer-events-none" style={{ background: 'radial-gradient(ellipse, #f59e0b 0%, transparent 70%)' }} />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={vp} transition={{ duration: 0.55 }} className="text-center mb-16">

@@ -23,8 +23,17 @@ export default function Services({ t }: ServicesProps) {
   const [selected, setSelected] = useState<number | null>(null)
 
   return (
-    <section id="services" className="py-24 bg-gradient-to-b from-[#f0f4ff] to-[#0e1a3a]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="services" className="py-24 relative overflow-hidden bg-gradient-to-b from-[#f0f4ff] to-[#0e1a3a]">
+      {/* Triangular mesh pattern */}
+      <div className="absolute inset-0 opacity-[0.045]" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cpolygon points='40,0 80,80 0,80' fill='none' stroke='%231e3a8a' stroke-width='1'/%3E%3Cpolygon points='40,80 0,0 80,0' fill='none' stroke='%231e3a8a' stroke-width='1'/%3E%3C/svg%3E")`,
+        backgroundSize: '80px 80px',
+      }} />
+      {/* Glow left */}
+      <div className="absolute left-0 top-1/4 w-80 h-80 rounded-full blur-3xl opacity-10 pointer-events-none" style={{ background: 'radial-gradient(circle, #6366f1, transparent)' }} />
+      {/* Glow right */}
+      <div className="absolute right-0 bottom-1/4 w-80 h-80 rounded-full blur-3xl opacity-10 pointer-events-none" style={{ background: 'radial-gradient(circle, #0ea5e9, transparent)' }} />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}

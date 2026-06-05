@@ -19,8 +19,16 @@ export default function About({ t }: AboutProps) {
   ]
 
   return (
-    <section id="about" className="py-24 bg-gradient-to-b from-[#0a0f1e] to-[#f0f4ff]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-24 relative overflow-hidden bg-gradient-to-b from-[#0a0f1e] to-[#f0f4ff]">
+      {/* Circuit-board geometric pattern */}
+      <div className="absolute inset-0 opacity-[0.05]" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cpath d='M0 50h40M60 50h40M50 0v40M50 60v40M35 50a15 15 0 1 1 30 0 15 15 0 0 1-30 0z' fill='none' stroke='%233b82f6' stroke-width='1.5'/%3E%3Ccircle cx='0' cy='50' r='3' fill='%233b82f6'/%3E%3Ccircle cx='100' cy='50' r='3' fill='%233b82f6'/%3E%3Ccircle cx='50' cy='0' r='3' fill='%233b82f6'/%3E%3Ccircle cx='50' cy='100' r='3' fill='%233b82f6'/%3E%3C/svg%3E")`,
+        backgroundSize: '100px 100px',
+      }} />
+      {/* Soft accent blobs */}
+      <div className="absolute top-1/3 left-0 w-72 h-72 rounded-full blur-3xl opacity-10 pointer-events-none" style={{ background: 'radial-gradient(circle, #6366f1, transparent)' }} />
+      <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full blur-3xl opacity-10 pointer-events-none" style={{ background: 'radial-gradient(circle, #3b82f6, transparent)' }} />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div {...fadeUp()} className="text-center mb-16">
           <span className="text-blue-400 text-sm font-semibold uppercase tracking-widest">Optim Human</span>
           <h2 className="text-3xl sm:text-5xl font-bold mt-2 mb-4 text-white">{t.about.title}</h2>
